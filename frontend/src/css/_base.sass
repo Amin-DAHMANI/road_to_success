@@ -1,0 +1,55 @@
+$_color_white: #FFFFFF
+$_color_black: #000000
+$_color_dark_grey: #2E3136
+$_color_one_pastel_rainbow: #C2A3FF
+$_color_two_pastel_rainbow: #7C95CF
+$_color_three_pastel_rainbow: #9CE4FD
+$_color_four_pastel_rainbow: #B5DB88
+$_color_five_pastel_rainbow: #FDEF80
+$_color_six_pastel_rainbow: #FED37C
+$_color_seven_pastel_rainbow: #FEA199
+$_color_rainbow: linear-gradient(135deg, $_color_one_pastel_rainbow 0%, $_color_two_pastel_rainbow 15%, $_color_three_pastel_rainbow 30%, $_color_four_pastel_rainbow 45%, $_color_five_pastel_rainbow 60%, $_color_six_pastel_rainbow 75%, $_color_seven_pastel_rainbow 100%)
+
+$_background_home: "../../../../public/assets/images/other_images/background_home.png"
+
+$_cocogoose_classic_medium: "../../public/assets/fonts/Cocogoose_Classic_Medium.ttf"
+$_cocogoose_classic_extrabold: "../../public/assets/fonts/Cocogoose_Classic_ExtraBold.ttf"
+
+$_pagella_regular: "../../public/assets/fonts/pagella.regular.otf"
+$_pagella_bold: "../../public/assets/fonts/pagella.bold.otf"
+$_pagella_italic: "../../public/assets/fonts/pagella.italic.otf"
+$_pagella_italic_bold: "../../public/assets/fonts/pagella.italic-bold.otf"
+
+@font-face
+  font-family: 'Cocogoose'
+  font-weight: 400
+  ascent-override: 100%
+  src: url('#{$_cocogoose_classic_medium}') format('truetype')
+
+@font-face
+  font-family: 'Cocogoose Bold'
+  font-weight: 700
+  src: url('#{$_cocogoose_classic_extrabold}') format('truetype')
+
+@font-face
+  font-family: 'Pagella'
+  font-weight: 400
+  src: url('#{$_pagella_regular}') format('opentype')
+
+@font-face
+  font-family: 'Pagella Bold'
+  font-weight: 700
+  src: url('#{$_pagella_bold}') format('opentype')
+
+@font-face
+  font-family: 'Pagella Italic Bold'
+  font-style: italic
+  font-weight: 700
+  src: url('#{$_pagella_italic_bold}') format('opentype')
+
+html, body
+  width: 100%
+  min-height: 100%
+  margin: 0
+  padding: 0
+  font-family: 'Pagella', sans-serif

@@ -1,0 +1,47 @@
+@import '../../Reusable/ButtonLink'
+
+#homeFirstSection
+  background-color: $_color_dark_grey
+  width: 100%
+  padding-top: 40px
+  padding-bottom: 50px
+  text-align: center
+  margin-top: -20px
+
+#homeFirstSection h1
+  margin: 0 auto
+  font-family: 'Cocogoose', sans-serif
+  font-weight: 700
+  font-size: 1.5em
+  color: $_color_white
+  width: 80%
+
+#homeFirstSection p
+  margin: 0 auto
+  margin-top: 15px
+  margin-bottom: 25px
+  padding: 0
+  font-family: 'Pagella', sans-serif
+  font-weight: 400
+  width: 80%
+  text-align: justify
+  color: $_color_white
+
+#homeFirstSection .buttonLink
+  width: 80%
+
+@media screen and (min-width: 800px)
+  #homeFirstSection
+    background-image: url($_background_home)
+    background-repeat: no-repeat
+    background-size: 100% auto
+    background-color: $_color_white
+    display: flex
+    justify-content: space-between
+    align-items: center
+  #homeFirstSection p, #homeFirstSection h1
+    color: $_color_dark_grey
+  #textHomeFirstSection
+    width: 50%
+  #imageHomeFirstSection
+    width: 50%

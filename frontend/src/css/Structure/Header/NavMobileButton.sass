@@ -1,0 +1,37 @@
+#navMobileButtonBlock
+  width: 70px
+  height: 70px
+
+#navMobileButton
+  width: 70px
+  height: 70px
+  padding: 0
+  background: transparent
+  border: none
+  cursor: pointer
+  border-radius: 5px
+
+#navMobileButton:hover
+  background-color: rgba($_color_white, 0.5)
+
+.burgerBarNavButton,
+.burgerBarNavButton::before,
+.burgerBarNavButton::after
+  display: block
+  position: relative
+  left: 0
+  width: 30px
+  height: 5px
+  border-radius: 5px
+  background-color: $_color_dark_grey
+  margin: auto
+
+.burgerBarNavButton::before,
+.burgerBarNavButton::after
+  content: ""
+
+.burgerBarNavButton::before
+  top: -200%
+
+.burgerBarNavButton::after
+  top: 100%

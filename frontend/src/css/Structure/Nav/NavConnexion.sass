@@ -1,0 +1,26 @@
+@import "./NavLink"
+
+#navConnexion
+  position: fixed
+  top: 80px
+  right: 0
+  background: $_color_white
+  min-height: 100%
+  width: 40%
+  padding-top: 5px
+  padding-right: 5px
+  padding-bottom: 5px
+  box-shadow: 0 0 10px $_color_black
+  z-index: 9
+  text-align: right
+
+#navConnexion hr
+  width: 100%
+
+.showNavConnexion
+  transform: translateX(0%)
+  transition: all 0.25s ease-in-out
+
+.hideNavConnexion
+  transform: translateX(101%)
+  transition: all 0.25s ease-in-out

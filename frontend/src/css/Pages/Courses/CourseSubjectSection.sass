@@ -1,0 +1,18 @@
+@import "./CourseSubjectCard"
+
+#courseSubjectSection
+  width: 95%
+  margin: auto
+  display: grid
+  justify-content: space-around
+  aligm-items: center
+  grid-template-columns: repeat(3, 30%)
+  grid-template-rows: auto
+  grid-column-gap: 10px
+  grid-row-gap: 10px
+
+@media screen and (min-width:800px)
+  #courseSubjectSection
+    grid-template-columns: repeat(5, 15%)
+    grid-template-rows: auto
+    grid-row-gap: 20px
