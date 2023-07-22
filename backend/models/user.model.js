@@ -4,6 +4,19 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
   {
+    category: {
+      type: String,
+      enum: [
+        "STUDENT",
+        "TUTOR",
+        "TEACHER",
+        "MODERATOR",
+        "ADMINISTRATOR",
+        "SUPER ADMINISTRATOR",
+      ],
+      default: "STUDENT",
+      required: true,
+    },
     identifiant: {
       type: String,
       required: true,
@@ -36,7 +49,7 @@ const userSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
-      default: "./uploads/profil_images/rainbow_trophy_on_dark_grey.png",
+      default: "./uploads/profil_images/rainbow_trophy.png",
     },
     bio: {
       type: String,

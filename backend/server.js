@@ -1,24 +1,43 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const userRoutes = require("./routes/user.routes");
-const dotenv = require("dotenv");
+const http = require("http");
+const app = require("./app");
 
-dotenv.config({ path: "./config/.env" });
-require("./config/db");
+const normalizePort = (val) => {
+  const port = parseInt(val, 10);
 
-const app = express();
+  if (isNaN(port)) return val;
+  if (port >= 0) return port;
+  return false;
+};
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const port = normalizePort(process.env.PORT || 3001);
+app.set("port", port);
 
-//routes
-app.use("/api/user", userRoutes);
-app.use("/api/user/:id", userRoutes);
+const errorHandler = (error) => {
+  if (error.syscall !== "listen") throw error;
 
-//serveur (à la fin du fichier, à lire en dernier)
-app.listen(process.env.PORT, (err) => {
-  if (err) {
-    console.log(err);
+  const address = server.address();
+  const bind = typeof address === "string" ? "pipe" + address : "port" + port;
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges.");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use.");
+      process.exit(1);
+      break;
+    default:
+      throw error;
   }
-  console.log(`Listening on port ${process.env.PORT}`);
+};
+
+const server = http.createServer(app);
+
+server.on("error", errorHandler);
+server.on("listening", () => {
+  const address = server.address();
+  const bind = typeof address === "string" ? "pipe" + address : "port" + port;
+  console.log("Listening on " + port);
 });
+
+server.listen(port);

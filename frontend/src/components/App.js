@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { ResizeProvider } from "../utils/context/ResizeContext";
 import { NavMobileProvider } from "../utils/context/NavMobileContext";
@@ -16,6 +17,13 @@ import Dashboard from "./Dashboard/Dashboard";
 import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  });
   return (
     <div className="App">
       <BrowserRouter>

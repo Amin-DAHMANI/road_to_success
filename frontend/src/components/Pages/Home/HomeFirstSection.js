@@ -8,12 +8,40 @@ function HomeFirstSection() {
   return (
     <section id="homeFirstSection">
       <section id="textHomeFirstSection">
-        <h1>Apprenez tout ce que vous désirez</h1>
+        <h1>
+          Road To Success : Accessible, Gratuit, Vaste, Facile, et Passionnant !
+        </h1>
         <p>
-          Road To Success est une plateforme dédiée à l'e-learning. Sur cette
-          plateforme, vous pouvez étudier des sujets divers et variés, comme les
-          mathématiques, les langues, ou encore l'informatique. Cliquez sur le
-          bouton ci-dessous pour accéder aux différents cours.
+          Mais qu'est-ce que Road To Success ?
+          <ul>
+            <li>
+              Road To Success, c'est un projet dedié à l'enseignement et au
+              développement personnel !
+            </li>
+            <li>
+              Road To Success, c'est une plateforme en ligne où tu pourras
+              apprendre à tout moment, de n'importe où tant que tu es connecté à
+              internet, avec un même un mode hors-ligne !
+            </li>
+            <li>
+              Road To Success, c'est un condensé de cours gratuits, sans devoir
+              payer le moindre centime !
+            </li>
+            <li>
+              Road To Success, c'est un catalogue de cours vaste, divers et
+              varié, avec de nombreuses disciplines !
+            </li>
+            <li>
+              Road To Success, c'est des enseignements adaptés à tous peu
+              importe le niveau où l'age !
+            </li>
+            <li>
+              Road To Success, c'est une tonne de cours tousaussi passionant les
+              uns que les autres !
+            </li>
+          </ul>
+          Convaincu ? Clique vite sur le bouton en-dessous pour accéder à tous
+          les cours !
         </p>
         <ButtonLink>Accéder aux cours</ButtonLink>
       </section>
