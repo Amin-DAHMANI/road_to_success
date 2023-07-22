@@ -7,6 +7,11 @@ export const NavConnexionProvider = ({ children }) => {
   const [showNavConnexion, setShowNavConnexion] = useState(false);
   const { pathname } = useLocation();
 
+  window.addEventListener("touchstart", () => {
+    console.log("test");
+    setShowNavConnexion(false);
+  });
+
   useEffect(() => {
     setShowNavConnexion(false);
   }, [pathname]);

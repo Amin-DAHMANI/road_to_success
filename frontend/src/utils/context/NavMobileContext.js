@@ -7,6 +7,10 @@ export const NavMobileProvider = ({ children }) => {
   const [showNavMobile, setShowNavMobile] = useState(false);
   const { pathname } = useLocation();
 
+  window.addEventListener("touchstart", () => {
+    setShowNavMobile(false);
+  });
+
   useEffect(() => {
     setShowNavMobile(false);
   }, [pathname]);
