@@ -11,8 +11,8 @@ function NavConnexionButton({ img }) {
       <img
         id="navConnexionButtonImg"
         src={img}
-        alt="Photo de profil de votre compte Road To Success"
-        title="Photo de profil de votre compte Road To Success"
+        alt="Profil de votre compte Road To Success"
+        title="Profil de votre compte Road To Success"
         onClick={() => setShowNavConnexion(!showNavConnexion)}
       />
     </div>
