@@ -15,10 +15,10 @@ $_background_home: "../../../../public/assets/images/other_images/background_hom
 $_cocogoose_classic_medium: "../../public/assets/fonts/Cocogoose_Classic_Medium.ttf"
 $_cocogoose_classic_extrabold: "../../public/assets/fonts/Cocogoose_Classic_ExtraBold.ttf"
 
-$_pagella_regular: "../../public/assets/fonts/pagella.regular.otf"
-$_pagella_bold: "../../public/assets/fonts/pagella.bold.otf"
-$_pagella_italic: "../../public/assets/fonts/pagella.italic.otf"
-$_pagella_italic_bold: "../../public/assets/fonts/pagella.italic-bold.otf"
+$_kurier_regular: "../../public/assets/fonts/Kurier-Regular.otf"
+$_kurier_bold: "../../public/assets/fonts/KurierHeavy-Regular.otf"
+$_kurier_italic: "../../public/assets/fonts/Kurier-Italic.otf"
+$_kurier_italic_bold: "../../public/assets/fonts/KurierHeavy-Italic.otf"
 
 @font-face
   font-family: 'Cocogoose'
@@ -32,24 +32,30 @@ $_pagella_italic_bold: "../../public/assets/fonts/pagella.italic-bold.otf"
   src: url('#{$_cocogoose_classic_extrabold}') format('truetype')
 
 @font-face
-  font-family: 'Pagella'
+  font-family: 'Kurier'
   font-weight: 400
-  src: url('#{$_pagella_regular}') format('opentype')
+  src: url('#{$_kurier_regular}') format('opentype')
 
 @font-face
-  font-family: 'Pagella Bold'
+  font-family: 'Kurier Bold'
   font-weight: 700
-  src: url('#{$_pagella_bold}') format('opentype')
+  src: url('#{$_kurier_bold}') format('opentype')
 
 @font-face
-  font-family: 'Pagella Italic Bold'
+  font-family: 'Kurier Italic'
+  font-style: italic
+  font-weight: 400
+  src: url('#{$_kurier_italic}') format('opentype')
+
+@font-face
+  font-family: 'Kurier Italic Bold'
   font-style: italic
   font-weight: 700
-  src: url('#{$_pagella_italic_bold}') format('opentype')
+  src: url('#{$_kurier_italic_bold}') format('opentype')
 
 html, body
   width: 100%
   min-height: 100%
   margin: 0
   padding: 0
-  font-family: 'Pagella', sans-serif
+  font-family: 'Kurier', sans-serif
