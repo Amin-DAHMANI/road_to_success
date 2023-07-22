@@ -12,13 +12,18 @@ $_color_rainbow: linear-gradient(135deg, $_color_one_pastel_rainbow 0%, $_color_
 
 $_background_home: "../../../../public/assets/images/other_images/background_home.png"
 
-$_cocogoose_classic_medium: "../../public/assets/fonts/Cocogoose_Classic_Medium.ttf"
-$_cocogoose_classic_extrabold: "../../public/assets/fonts/Cocogoose_Classic_ExtraBold.ttf"
+$_cocogoose_classic_medium: "../../public/assets/fonts/Cocogoose/Cocogoose_Classic_Medium.ttf"
+$_cocogoose_classic_extrabold: "../../public/assets/fonts/Cocogoose/Cocogoose_Classic_ExtraBold.ttf"
 
-$_kurier_regular: "../../public/assets/fonts/Kurier-Regular.otf"
-$_kurier_bold: "../../public/assets/fonts/KurierHeavy-Regular.otf"
-$_kurier_italic: "../../public/assets/fonts/Kurier-Italic.otf"
-$_kurier_italic_bold: "../../public/assets/fonts/KurierHeavy-Italic.otf"
+$_kurier_regular: "../../public/assets/fonts/Kurier/Kurier-Regular.otf"
+$_kurier_bold: "../../public/assets/fonts/Kurier/KurierHeavy-Regular.otf"
+$_kurier_italic: "../../public/assets/fonts/Kurier/Kurier-Italic.otf"
+$_kurier_italic_bold: "../../public/assets/fonts/Kurier/KurierHeavy-Italic.otf"
+
+$_candara: "../../public/assets/fonts/Candara/Candara.ttf"
+$_candara_bold: "../../public/assets/fonts/Candara/Candara_Bold.ttf"
+$_candara_italic: "../../public/assets/fonts/Candara/Candara_Italic.ttf"
+$_candara_italic_bold: "../../public/assets/fonts/Candara/Candara_Bold_Italic.ttf"
 
 @font-face
   font-family: 'Cocogoose'
@@ -53,9 +58,31 @@ $_kurier_italic_bold: "../../public/assets/fonts/KurierHeavy-Italic.otf"
   font-weight: 700
   src: url('#{$_kurier_italic_bold}') format('opentype')
 
+@font-face
+  font-family: 'Candara'
+  font-weight: 400
+  src: url('#{$_candara}') format('truetype')
+
+@font-face
+  font-family: 'Candara Bold'
+  font-weight: 900
+  src: url('#{$_candara_bold}') format('truetype')
+
+@font-face
+  font-family: 'Candara Italic'
+  font-style: italic
+  font-weight: 400
+  src: url('#{$_candara_italic}') format('truetype')
+
+@font-face
+  font-family: 'Candara Italic Bold'
+  font-style: italic
+  font-weight: 900
+  src: url('#{$_candara_italic_bold}') format('truetype')
+
 html, body
   width: 100%
   min-height: 100%
   margin: 0
   padding: 0
-  font-family: 'Kurier', sans-serif
+  font-family: 'Candara', sans-serif
