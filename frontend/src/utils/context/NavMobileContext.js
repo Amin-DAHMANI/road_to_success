@@ -16,7 +16,12 @@ export const NavMobileProvider = ({ children }) => {
   }, [pathname]);
 
   return (
-    <NavMobileContext.Provider value={{ showNavMobile, setShowNavMobile }}>
+    <NavMobileContext.Provider
+      value={{
+        showNavMobile,
+        setShowNavMobile,
+      }}
+    >
       {children}
     </NavMobileContext.Provider>
   );

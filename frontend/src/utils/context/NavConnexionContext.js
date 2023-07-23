@@ -8,7 +8,6 @@ export const NavConnexionProvider = ({ children }) => {
   const { pathname } = useLocation();
 
   window.addEventListener("touchstart", () => {
-    console.log("test");
     setShowNavConnexion(false);
   });
 

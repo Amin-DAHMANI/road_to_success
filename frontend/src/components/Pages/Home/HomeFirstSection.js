@@ -11,8 +11,7 @@ function HomeFirstSection() {
         <h1>
           Road To Success : Accessible, Gratuit, Vaste, Facile, et Passionnant !
         </h1>
-        <p>
-          Mais qu'est-ce que Road To Success ?
+        <div id="homeFirstSectionParagraph">
           <ul>
             <li>
               Road To Success, c'est un projet dedié à l'enseignement et au
@@ -42,7 +41,7 @@ function HomeFirstSection() {
           </ul>
           Convaincu ? Clique vite sur le bouton en-dessous pour accéder à tous
           les cours !
-        </p>
+        </div>
         <ButtonLink>Accéder aux cours</ButtonLink>
       </section>
       {isDesktopWidth && (

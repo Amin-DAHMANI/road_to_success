@@ -15,7 +15,7 @@ function NavConnexion() {
       <hr />
       <NavLink path="/inscription">Inscription</NavLink>
       <hr />
-      <NavLink path="/dashboard">Dashboard</NavLink>
+      <NavLink path="/dashboard/accueil">Dashboard</NavLink>
     </nav>
   );
 }
