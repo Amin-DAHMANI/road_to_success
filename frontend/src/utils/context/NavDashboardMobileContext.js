@@ -12,7 +12,8 @@ export const NavDashboardMobileProvider = ({ children }) => {
 
   const { screenWidth } = useContext(ResizeContext);
 
-  window.addEventListener("touchstart", () => {
+  window.addEventListener("touchstart", (e) => {
+    e.stopPropagation();
     if (showNavDashboardMobile && !transitionNavDashboardMobile) {
       setShowNavDashboardMobile(false);
     }
