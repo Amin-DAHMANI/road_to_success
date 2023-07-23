@@ -8,7 +8,6 @@ export const NavDashboardProvider = ({ children }) => {
   const { pathname } = useLocation();
 
   window.addEventListener("touchstart", () => {
-    console.log("test");
     setShowNavDashboard(false);
   });
 
