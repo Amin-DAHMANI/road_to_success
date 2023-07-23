@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavDashboardMobileContext } from "../../../utils/context/NavDashboardMobileContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 import { ResizeContext } from "../../../utils/context/ResizeContext";
 
 function NavDashboardMobileButton() {
@@ -8,7 +8,7 @@ function NavDashboardMobileButton() {
     setShowNavDashboardMobile,
     transitionNavDashboardMobile,
     setTransitionNavDashboardMobile,
-  } = useContext(NavDashboardMobileContext);
+  } = useContext(AllNavContext);
   const { isDesktopWidth } = useContext(ResizeContext);
 
   {
@@ -20,12 +20,6 @@ function NavDashboardMobileButton() {
         onClick={(e) => {
           e.stopPropagation();
           setShowNavDashboardMobile(!showNavDashboardMobile);
-          setTransitionNavDashboardMobile(true);
-        }}
-        onTouchStart={(e) => {
-          e.stopPropagation();
-          setShowNavDashboardMobile(!showNavDashboardMobile);
-          setTransitionNavDashboardMobile(true);
         }}
       >
         Dashboard Menu

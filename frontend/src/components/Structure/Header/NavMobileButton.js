@@ -1,10 +1,14 @@
 import React from "react";
 import { useContext } from "react";
-import { NavMobileContext } from "../../../utils/context/NavMobileContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 function NavMobileButton() {
-  const { showNavMobile, setShowNavMobile, setTransitionNavMobile } =
-    useContext(NavMobileContext);
+  const {
+    showNavMobile,
+    setShowNavMobile,
+    transitionNavMobile,
+    setTransitionNavMobile,
+  } = useContext(AllNavContext);
 
   return (
     <div id="navMobileButtonBlock">
@@ -13,7 +17,6 @@ function NavMobileButton() {
         onClick={(e) => {
           e.stopPropagation();
           setShowNavMobile(!showNavMobile);
-          setTransitionNavMobile(true);
         }}
       >
         <div className="burgerBarNavButton"></div>

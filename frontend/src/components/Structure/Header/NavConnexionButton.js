@@ -1,10 +1,14 @@
 import React from "react";
 import { useContext } from "react";
-import { NavConnexionContext } from "../../../utils/context/NavConnexionContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 function NavConnexionButton({ img }) {
-  const { showNavConnexion, setShowNavConnexion, setTransitionNavConnexion } =
-    useContext(NavConnexionContext);
+  const {
+    showNavConnexion,
+    setShowNavConnexion,
+    transitionNavConnexion,
+    setTransitionNavConnexion,
+  } = useContext(AllNavContext);
 
   return (
     <div id="navConnexionButton">
@@ -16,7 +20,6 @@ function NavConnexionButton({ img }) {
         onClick={(e) => {
           e.stopPropagation();
           setShowNavConnexion(!showNavConnexion);
-          setTransitionNavConnexion(true);
         }}
       />
     </div>

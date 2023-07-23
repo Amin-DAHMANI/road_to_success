@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { ResizeProvider } from "../utils/context/ResizeContext";
-import { NavMobileProvider } from "../utils/context/NavMobileContext";
-import { NavConnexionProvider } from "../utils/context/NavConnexionContext";
-import { NavDashboardMobileProvider } from "../utils/context/NavDashboardMobileContext";
+import { AllNavProvider } from "../utils/context/AllNavContext";
 import { DashboardProvider } from "../utils/context/DashboardContext";
 
 import Header from "./Structure/Header/Header";
@@ -22,31 +20,27 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ResizeProvider>
-          <NavMobileProvider>
-            <NavConnexionProvider>
-              <DashboardProvider>
-                <NavDashboardMobileProvider>
-                  <Header />
-                  <NavMobile />
-                  <NavConnexion />
-                  <Routes>
-                    <Route index element={<Home />} />
-                    <Route exact path="/accueil" element={<Home />} />
-                    <Route exact path="/cours" element={<Courses />} />
-                    <Route
-                      exact
-                      path="/dashboard/accueil"
-                      element={<DashboardHome />}
-                    />
-                    <Route exact path="/connexion" element={<Connexion />} />
-                    <Route exact path="/erreur-404" element={<NotFound />} />
-                    <Route path="*" element={<Navigate to="/erreur-404" />} />
-                  </Routes>
-                  <Footer />
-                </NavDashboardMobileProvider>
-              </DashboardProvider>
-            </NavConnexionProvider>
-          </NavMobileProvider>
+          <AllNavProvider>
+            <DashboardProvider>
+              <Header />
+              <NavMobile />
+              <NavConnexion />
+              <Routes>
+                <Route index element={<Home />} />
+                <Route exact path="/accueil" element={<Home />} />
+                <Route exact path="/cours" element={<Courses />} />
+                <Route
+                  exact
+                  path="/dashboard/accueil"
+                  element={<DashboardHome />}
+                />
+                <Route exact path="/connexion" element={<Connexion />} />
+                <Route exact path="/erreur-404" element={<NotFound />} />
+                <Route path="*" element={<Navigate to="/erreur-404" />} />
+              </Routes>
+              <Footer />
+            </DashboardProvider>
+          </AllNavProvider>
         </ResizeProvider>
       </BrowserRouter>
     </div>

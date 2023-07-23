@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { NavConnexionContext } from "../../../utils/context/NavConnexionContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 import NavLink from "./NavLink";
 
 function NavConnexion() {
   const { showNavConnexion, setTransitionNavConnexion } =
-    useContext(NavConnexionContext);
+    useContext(AllNavContext);
 
   return (
     <nav

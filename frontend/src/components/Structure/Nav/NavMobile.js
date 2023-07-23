@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { NavMobileContext } from "../../../utils/context/NavMobileContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 import NavLink from "./NavLink";
 
 function NavMobile() {
-  const { showNavMobile, setTransitionNavMobile } =
-    useContext(NavMobileContext);
+  const { showNavMobile, setTransitionNavMobile } = useContext(AllNavContext);
 
   return (
     <nav

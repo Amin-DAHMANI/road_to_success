@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavDashboardMobileContext } from "../../../utils/context/NavDashboardMobileContext";
+import { AllNavContext } from "../../../utils/context/AllNavContext";
 import { ResizeContext } from "../../../utils/context/ResizeContext";
 
 import NavLink from "../Nav/NavLink";
@@ -9,7 +9,7 @@ function NavDashboard() {
     showNavDashboardMobile,
     transitionNavDashboardMobile,
     setTransitionNavDashboardMobile,
-  } = useContext(NavDashboardMobileContext);
+  } = useContext(AllNavContext);
   const { isDesktopWidth } = useContext(ResizeContext);
 
   return (
