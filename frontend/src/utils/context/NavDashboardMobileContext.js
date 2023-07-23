@@ -15,13 +15,12 @@ export const NavDashboardMobileProvider = ({ children }) => {
   window.addEventListener("touchstart", (e) => {
     if (showNavDashboardMobile && !transitionNavDashboardMobile) {
       setShowNavDashboardMobile(false);
-      setTransitionNavDashboardMobile(true)
+      setTransitionNavDashboardMobile(true);
     }
   });
 
   window.addEventListener("touchend", (e) => {
-      setTransitionNavDashboardMobile(false)
-    }
+    setTransitionNavDashboardMobile(false);
   });
 
   window.addEventListener("click", (e) => {
