@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function LogoHeader() {
-  const imgLink = "./assets/images/logo_and_icon/logo_road_to_success.png";
+  const imgLink = "./assets/images/logo_images/logo_road_to_success.png";
 
   return (
     <Link to="/accueil" id="logoHeader">

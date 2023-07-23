@@ -12,8 +12,10 @@ import Footer from "./Structure/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Courses from "./Pages/Courses/Courses";
 import Connexion from "./Pages/Connection/Connection";
-import DashboardHome from "./Dashboard/DashboardHome";
 import NotFound from "./Pages/NotFound/NotFound";
+
+import DashboardHome from "./Dashboard/Home/DashboardHome";
+import DashboardCourses from "./Dashboard/Courses/DashboardCourses";
 
 function App() {
   return (
@@ -29,12 +31,17 @@ function App() {
                 <Route index element={<Home />} />
                 <Route exact path="/accueil" element={<Home />} />
                 <Route exact path="/cours" element={<Courses />} />
+                <Route exact path="/connexion" element={<Connexion />} />
                 <Route
                   exact
                   path="/dashboard/accueil"
                   element={<DashboardHome />}
                 />
-                <Route exact path="/connexion" element={<Connexion />} />
+                <Route
+                  exact
+                  path="/dashboard/cours"
+                  element={<DashboardCourses />}
+                />
                 <Route exact path="/erreur-404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/erreur-404" />} />
               </Routes>
