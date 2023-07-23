@@ -1,5 +1,5 @@
 function DashboardTableCourses() {
-  const deleteIconLink = "./assets/images/icone_images/trash.svg";
+  const deleteIconLink = "./assets/images/icone_images/trash.png";
   return (
     <table id="dashboardTableCourses">
       <thead>
