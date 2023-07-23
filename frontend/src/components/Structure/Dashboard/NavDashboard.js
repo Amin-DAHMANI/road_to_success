@@ -5,8 +5,11 @@ import { ResizeContext } from "../../../utils/context/ResizeContext";
 import NavLink from "../Nav/NavLink";
 
 function NavDashboard() {
-  const { showNavDashboardMobile, setTransitionNavDashboardMobile } =
-    useContext(NavDashboardMobileContext);
+  const {
+    showNavDashboardMobile,
+    transitionNavDashboardMobile,
+    setTransitionNavDashboardMobile,
+  } = useContext(NavDashboardMobileContext);
   const { isDesktopWidth } = useContext(ResizeContext);
 
   return (

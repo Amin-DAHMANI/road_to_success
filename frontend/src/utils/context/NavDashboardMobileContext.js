@@ -12,22 +12,17 @@ export const NavDashboardMobileProvider = ({ children }) => {
 
   const { screenWidth } = useContext(ResizeContext);
 
-  window.addEventListener("touchstart", (e) => {
+  window.addEventListener("click", (e) => {
+    e.stopPropagation();
     if (showNavDashboardMobile && !transitionNavDashboardMobile) {
       setShowNavDashboardMobile(false);
       setTransitionNavDashboardMobile(true);
     }
   });
 
-  window.addEventListener("touchend", (e) => {
-    setTransitionNavDashboardMobile(false);
-  });
-
-  window.addEventListener("click", (e) => {
-    e.stopPropagation();
+  window.addEventListener("touchstart", (e) => {
     if (showNavDashboardMobile && !transitionNavDashboardMobile) {
       setShowNavDashboardMobile(false);
-      setTransitionNavDashboardMobile(true);
     }
   });
 

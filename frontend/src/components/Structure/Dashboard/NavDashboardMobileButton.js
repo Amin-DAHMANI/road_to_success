@@ -6,6 +6,7 @@ function NavDashboardMobileButton() {
   const {
     showNavDashboardMobile,
     setShowNavDashboardMobile,
+    transitionNavDashboardMobile,
     setTransitionNavDashboardMobile,
   } = useContext(NavDashboardMobileContext);
   const { isDesktopWidth } = useContext(ResizeContext);
@@ -17,6 +18,11 @@ function NavDashboardMobileButton() {
       <button
         id="navDashboardMobileButton"
         onClick={(e) => {
+          e.stopPropagation();
+          setShowNavDashboardMobile(!showNavDashboardMobile);
+          setTransitionNavDashboardMobile(true);
+        }}
+        onTouchStart={(e) => {
           e.stopPropagation();
           setShowNavDashboardMobile(!showNavDashboardMobile);
           setTransitionNavDashboardMobile(true);
