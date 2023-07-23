@@ -11,19 +11,6 @@ export const ResizeProvider = ({ children }) => {
   useEffect(() => {
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
-      if (window.innerWidth <= 500) {
-        setIsMobileWidth(true);
-        setIsTabletWidth(false);
-        setIsDesktopWidth(false);
-      } else if (window.innerWidth > 500 && window.innerWidth < 800) {
-        setIsMobileWidth(false);
-        setIsTabletWidth(true);
-        setIsDesktopWidth(false);
-      } else {
-        setIsMobileWidth(false);
-        setIsTabletWidth(false);
-        setIsDesktopWidth(true);
-      }
     };
 
     window.addEventListener("resize", changeWidth);
@@ -32,6 +19,24 @@ export const ResizeProvider = ({ children }) => {
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
+
+  useEffect(() => {
+    if (window.innerWidth <= 500) {
+      setIsMobileWidth(true);
+      setIsTabletWidth(false);
+      setIsDesktopWidth(false);
+    }
+    if (window.innerWidth > 500 && window.innerWidth < 800) {
+      setIsMobileWidth(false);
+      setIsTabletWidth(true);
+      setIsDesktopWidth(false);
+    }
+    if (window.innerWidth >= 800) {
+      setIsMobileWidth(false);
+      setIsTabletWidth(false);
+      setIsDesktopWidth(true);
+    }
+  }, [screenWidth]);
 
   return (
     <ResizeContext.Provider

@@ -14,8 +14,7 @@ export const DashboardProvider = ({ children }) => {
     } else {
       setInDashboard(false);
     }
-    console.log(inDashboard);
-  }, [location]);
+  }, [location, inDashboard]);
 
   return (
     <DashboardContext.Provider

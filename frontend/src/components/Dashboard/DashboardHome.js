@@ -1,13 +1,13 @@
 import Main from "../Structure/Main/Main";
 import NavDashboard from "../Structure/Dashboard/NavDashboard";
-import NavDashboardButton from "../Structure/Dashboard/NavDashboardButton";
+import NavDashboardMobileButton from "../Structure/Dashboard/NavDashboardMobileButton";
 
 function DashboardHome() {
   return (
     <div id="dashboardHome">
       <Main>
         <NavDashboard />
-        <NavDashboardButton />
+        <NavDashboardMobileButton />
       </Main>
     </div>
   );

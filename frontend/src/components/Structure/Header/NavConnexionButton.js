@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { NavConnexionContext } from "../../../utils/context/NavConnexionContext";
 
 function NavConnexionButton({ img }) {
-  const { showNavConnexion, setShowNavConnexion } =
+  const { showNavConnexion, setShowNavConnexion, setTransitionNavConnexion } =
     useContext(NavConnexionContext);
 
   return (
@@ -13,7 +13,11 @@ function NavConnexionButton({ img }) {
         src={img}
         alt="Profil de votre compte Road To Success"
         title="Profil de votre compte Road To Success"
-        onClick={() => setShowNavConnexion(!showNavConnexion)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowNavConnexion(!showNavConnexion);
+          setTransitionNavConnexion(true);
+        }}
       />
     </div>
   );

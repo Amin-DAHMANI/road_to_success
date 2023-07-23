@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ResizeProvider } from "../utils/context/ResizeContext";
 import { NavMobileProvider } from "../utils/context/NavMobileContext";
 import { NavConnexionProvider } from "../utils/context/NavConnexionContext";
-import { NavDashboardProvider } from "../utils/context/NavDashboardContext";
+import { NavDashboardMobileProvider } from "../utils/context/NavDashboardMobileContext";
 import { DashboardProvider } from "../utils/context/DashboardContext";
 
 import Header from "./Structure/Header/Header";
@@ -25,7 +25,7 @@ function App() {
           <NavMobileProvider>
             <NavConnexionProvider>
               <DashboardProvider>
-                <NavDashboardProvider>
+                <NavDashboardMobileProvider>
                   <Header />
                   <NavMobile />
                   <NavConnexion />
@@ -43,7 +43,7 @@ function App() {
                     <Route path="*" element={<Navigate to="/erreur-404" />} />
                   </Routes>
                   <Footer />
-                </NavDashboardProvider>
+                </NavDashboardMobileProvider>
               </DashboardProvider>
             </NavConnexionProvider>
           </NavMobileProvider>

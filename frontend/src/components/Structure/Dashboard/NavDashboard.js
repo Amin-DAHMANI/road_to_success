@@ -1,15 +1,25 @@
 import { useContext } from "react";
-import { NavDashboardContext } from "../../../utils/context/NavDashboardContext";
+import { NavDashboardMobileContext } from "../../../utils/context/NavDashboardMobileContext";
+import { ResizeContext } from "../../../utils/context/ResizeContext";
 
 import NavLink from "../Nav/NavLink";
 
 function NavDashboard() {
-  const { showNavDashboard } = useContext(NavDashboardContext);
+  const { showNavDashboardMobile, setTransitionNavDashboardMobile } =
+    useContext(NavDashboardMobileContext);
+  const { isDesktopWidth } = useContext(ResizeContext);
 
   return (
     <nav
-      id="navDashboard"
-      className={showNavDashboard ? "showNavDashboard" : "hideNavDashboard"}
+      id="navDashboardMobile"
+      className={
+        showNavDashboardMobile
+          ? "showNavDashboardMobile"
+          : "hideNavDashboardMobile"
+      }
+      onTransitionEnd={(e) => {
+        setTransitionNavDashboardMobile(false);
+      }}
     >
       <NavLink path="/dashboard/cours">Cours</NavLink>
       <hr />

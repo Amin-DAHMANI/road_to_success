@@ -4,12 +4,16 @@ import { NavMobileContext } from "../../../utils/context/NavMobileContext";
 import NavLink from "./NavLink";
 
 function NavMobile() {
-  const { showNavMobile } = useContext(NavMobileContext);
+  const { showNavMobile, setTransitionNavMobile } =
+    useContext(NavMobileContext);
 
   return (
     <nav
       id="navMobile"
       className={showNavMobile ? "showNavMobile" : "hideNavMobile"}
+      onTransitionEnd={(e) => {
+        setTransitionNavMobile(false);
+      }}
     >
       <NavLink path="/accueil">Accueil</NavLink>
       <hr />
