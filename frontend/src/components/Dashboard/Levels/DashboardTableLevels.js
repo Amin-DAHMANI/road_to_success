@@ -1,14 +1,14 @@
-function DashboardTableFields() {
+function DashboardTableLevels() {
   const deleteIconLink = "./../assets/images/icone_images/delete.png";
   const updateIconLink = "./../assets/images/icone_images/update.png";
   return (
-    <table id="dashboardTableFields">
+    <table id="dashboardTableLevels">
       <thead>
         <tr>
           <td className="checkboxColumn">
             <input type="checkbox" />
           </td>
-          <td className="tdAlignLeft">Niveaux</td>
+          <td className="tdAlignLeft">Cours</td>
           <td className="updateColumn">Modifier</td>
           <td className="deleteColumn">Supprimer</td>
         </tr>
@@ -18,7 +18,7 @@ function DashboardTableFields() {
           <td>
             <input type="checkbox" />
           </td>
-          <td className="tdAlignLeft">Français</td>
+          <td className="tdAlignLeft">Débutant</td>
           <td>
             {" "}
             <img
@@ -41,7 +41,7 @@ function DashboardTableFields() {
           <td>
             <input type="checkbox" />
           </td>
-          <td className="tdAlignLeft">Mathématiques</td>
+          <td className="tdAlignLeft">Intermédiaire</td>
           <td>
             {" "}
             <img
@@ -65,4 +65,4 @@ function DashboardTableFields() {
   );
 }
 
-export default DashboardTableFields;
+export default DashboardTableLevels;

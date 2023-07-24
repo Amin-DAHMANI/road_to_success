@@ -12,6 +12,10 @@ function NavDashboard() {
   if (isDesktopWidth) {
     return (
       <nav id="navDashboard">
+        <NavLink path="/dashboard/mon-profil">Mon profil</NavLink>
+        <hr />
+        <NavLink path="/dashboard/comptes">Comptes</NavLink>
+        <hr />
         <NavLink path="/dashboard/cours">Cours</NavLink>
         <hr />
         <NavLink path="/dashboard/niveaux">Niveaux</NavLink>

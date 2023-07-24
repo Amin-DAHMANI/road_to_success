@@ -16,7 +16,9 @@ import Registration from "./Pages/Registration/Registration";
 import NotFound from "./Pages/NotFound/NotFound";
 
 import DashboardHome from "./Dashboard/Home/DashboardHome";
+import DashboardAccounts from "./Dashboard/Accounts/DashboardAccounts";
 import DashboardFields from "./Dashboard/Fields/DashboardFields";
+import DashboardLevels from "./Dashboard/Levels/DashboardLevels";
 
 function App() {
   return (
@@ -35,7 +37,15 @@ function App() {
                 <Route path="/connexion" element={<Connexion />} />
                 <Route path="/inscription" element={<Registration />} />
                 <Route path="/dashboard" element={<DashboardHome />} />
+                <Route
+                  path="/dashboard/comptes"
+                  element={<DashboardAccounts />}
+                />
                 <Route path="/dashboard/cours" element={<DashboardFields />} />
+                <Route
+                  path="/dashboard/niveaux"
+                  element={<DashboardLevels />}
+                />
                 <Route path="/erreur-404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/erreur-404" />} />
               </Routes>

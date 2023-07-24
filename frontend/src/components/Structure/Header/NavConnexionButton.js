@@ -3,12 +3,7 @@ import { useContext } from "react";
 import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 function NavConnexionButton({ img }) {
-  const {
-    showNavConnexion,
-    setShowNavConnexion,
-    transitionNavConnexion,
-    setTransitionNavConnexion,
-  } = useContext(AllNavContext);
+  const { showNavConnexion, setShowNavConnexion } = useContext(AllNavContext);
 
   return (
     <div id="navConnexionButton">

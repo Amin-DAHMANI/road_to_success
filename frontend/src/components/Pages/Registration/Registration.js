@@ -4,6 +4,7 @@ import Main from "../../Structure/Main/Main";
 import InputText from "../../Reusable/InputText";
 import InputPassword from "../../Reusable/InputPassword";
 import InputOptionList from "../../Reusable/InputOptionList";
+import InputEmail from "../../Reusable/InputEmail";
 import ButtonForm from "../../Reusable/ButtonForm";
 
 function Registration() {
@@ -82,6 +83,14 @@ function Registration() {
             name={"pseudoRegistration"}
             value={pseudoRegistration}
             setValue={handlePseudoRegistration}
+          />
+          <InputEmail
+            label={"Email"}
+            forid={"emailRegistration"}
+            id={"emailRegistration"}
+            name={"emailRegistration"}
+            value={emailRegistration}
+            setValue={handleEmailRegistration}
           />
           <ButtonForm id="buttonRegistration">Inscription</ButtonForm>
         </form>

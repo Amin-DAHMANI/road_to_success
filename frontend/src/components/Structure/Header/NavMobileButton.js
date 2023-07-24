@@ -3,12 +3,7 @@ import { useContext } from "react";
 import { AllNavContext } from "../../../utils/context/AllNavContext";
 
 function NavMobileButton() {
-  const {
-    showNavMobile,
-    setShowNavMobile,
-    transitionNavMobile,
-    setTransitionNavMobile,
-  } = useContext(AllNavContext);
+  const { showNavMobile, setShowNavMobile } = useContext(AllNavContext);
 
   return (
     <div id="navMobileButtonBlock">
