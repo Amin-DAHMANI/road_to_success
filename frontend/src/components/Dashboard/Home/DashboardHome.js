@@ -4,12 +4,12 @@ import NavDashboardMobileButton from "../../Structure/Dashboard/NavDashboardMobi
 
 function DashboardHome() {
   return (
-    <div id="dashboardHome">
+    <section id="dashboardHome">
       <MainDashboard>
         <NavDashboard />
         <NavDashboardMobileButton />
       </MainDashboard>
-    </div>
+    </section>
   );
 }
 

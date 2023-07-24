@@ -3,7 +3,7 @@ const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
 
 // Authentification
-router.post("/register", authController.signUp);
+router.post("/inscription", authController.signUp);
 
 //User DB
 router.get("/", userController.getAllUsers);

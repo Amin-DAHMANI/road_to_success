@@ -19,7 +19,7 @@ function Connection() {
 
   return (
     <Main>
-      <div className="page" id="connexion">
+      <section className="page" id="connexionSection">
         <form className="form">
           <InputText
             label={"Identifiant"}
@@ -39,7 +39,7 @@ function Connection() {
           />
           <ButtonForm id="buttonConnexion">Connexion</ButtonForm>
         </form>
-      </div>
+      </section>
     </Main>
   );
 }

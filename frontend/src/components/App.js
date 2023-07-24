@@ -12,10 +12,11 @@ import Footer from "./Structure/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Courses from "./Pages/Courses/Courses";
 import Connexion from "./Pages/Connection/Connection";
+import Registration from "./Pages/Registration/Registration";
 import NotFound from "./Pages/NotFound/NotFound";
 
 import DashboardHome from "./Dashboard/Home/DashboardHome";
-import DashboardCourses from "./Dashboard/Courses/DashboardCourses";
+import DashboardFields from "./Dashboard/Fields/DashboardFields";
 
 function App() {
   return (
@@ -32,8 +33,9 @@ function App() {
                 <Route path="/accueil" element={<Home />} />
                 <Route path="/cours" element={<Courses />} />
                 <Route path="/connexion" element={<Connexion />} />
+                <Route path="/inscription" element={<Registration />} />
                 <Route path="/dashboard" element={<DashboardHome />} />
-                <Route path="/dashboard/cours" element={<DashboardCourses />} />
+                <Route path="/dashboard/cours" element={<DashboardFields />} />
                 <Route path="/erreur-404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/erreur-404" />} />
               </Routes>

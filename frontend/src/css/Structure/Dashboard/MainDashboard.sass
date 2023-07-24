@@ -3,7 +3,6 @@
   top: 100px
   right: 20px
   left: 20px
-  min-height: 80vh
   border-radius: 5px
   background: $_color_neumorphism_background
   box-shadow: 10px 10px 30px $_color_neumorphism_shadow, -10px -10px 30px #ffffff
@@ -18,11 +17,35 @@
 #mainDashboard .impairLine
   background-color: $_color_impair_line_dashboard
 
-.deleteButton
+.checkboxColumn
+  width: 40px
+
+.deleteButton, .updateButton
+  display: block
   width: 30px
   padding: 3px
   border-radius: 5px
+  margin: auto
+
+.deleteButton:hover, .updateButton:hover
+  box-shadow: 0 0 20px $_color_black
+  cursor: pointer
+
+.deleteButton
   background-color: $_color_delete
+
+.updateButton
+  background-color: $_color_update
+
+.updateColumn, .deleteColumn
+  width: 75px
+
+td
+  padding: 5px
+  text-align: center
+
+.tdAlignLeft
+  text-align: left
 
 @media screen and (min-width: 800px)
   #mainDashboard

@@ -1,20 +1,20 @@
-import DashboardTableCourses from "./DashboardTableCourses";
+import DashboardTableFields from "./DashboardTableFields";
 
 import MainDashboard from "../../Structure/Dashboard/MainDashboard";
 
 import NavDashboard from "../../Structure/Dashboard/NavDashboard";
 import NavDashboardMobileButton from "../../Structure/Dashboard/NavDashboardMobileButton";
 
-function DashboardCourses() {
+function DashboardFields() {
   return (
-    <div id="dashboardCourses">
+    <section id="dashboardFields">
       <NavDashboard />
       <MainDashboard>
-        <DashboardTableCourses />
+        <DashboardTableFields />
       </MainDashboard>
       <NavDashboardMobileButton />
-    </div>
+    </section>
   );
 }
 
-export default DashboardCourses;
+export default DashboardFields;
