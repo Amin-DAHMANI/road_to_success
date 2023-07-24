@@ -29,20 +29,12 @@ function App() {
               <NavConnexion />
               <Routes>
                 <Route index element={<Home />} />
-                <Route exact path="/accueil" element={<Home />} />
-                <Route exact path="/cours" element={<Courses />} />
-                <Route exact path="/connexion" element={<Connexion />} />
-                <Route
-                  exact
-                  path="/dashboard/accueil"
-                  element={<DashboardHome />}
-                />
-                <Route
-                  exact
-                  path="/dashboard/cours"
-                  element={<DashboardCourses />}
-                />
-                <Route exact path="/erreur-404" element={<NotFound />} />
+                <Route path="/accueil" element={<Home />} />
+                <Route path="/cours" element={<Courses />} />
+                <Route path="/connexion" element={<Connexion />} />
+                <Route path="/dashboard" element={<DashboardHome />} />
+                <Route path="/dashboard/cours" element={<DashboardCourses />} />
+                <Route path="/erreur-404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/erreur-404" />} />
               </Routes>
               <Footer />

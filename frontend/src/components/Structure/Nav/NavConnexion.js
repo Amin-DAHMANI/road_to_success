@@ -24,7 +24,7 @@ function NavConnexion() {
       {inDashboard ? (
         <NavLink path="/accueil">Website</NavLink>
       ) : (
-        <NavLink path="/dashboard/accueil">Dashboard</NavLink>
+        <NavLink path="/dashboard">Dashboard</NavLink>
       )}
     </nav>
   );
