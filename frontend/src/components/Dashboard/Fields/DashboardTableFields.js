@@ -8,7 +8,7 @@ function DashboardTableFields() {
           <td className="checkboxColumn">
             <input type="checkbox" />
           </td>
-          <td className="tdAlignLeft">Niveaux</td>
+          <td className="tdAlignLeft">Cours</td>
           <td className="updateColumn">Modifier</td>
           <td className="deleteColumn">Supprimer</td>
         </tr>
@@ -18,7 +18,7 @@ function DashboardTableFields() {
           <td>
             <input type="checkbox" />
           </td>
-          <td className="tdAlignLeft">Français</td>
+          <td className="tdAlignLeft">Anglais</td>
           <td>
             {" "}
             <img
