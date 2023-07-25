@@ -10,9 +10,7 @@ const createToken = (id) => {
 };
 
 module.exports.signUp = async (req, res) => {
-  const { category, identifiant, password, pseudo, email, picture, bio } =
-    req.body;
-
+  const { category, identifiant, password, pseudo, email } = req.body;
   try {
     const user = await UserModel.create({
       category,
@@ -20,10 +18,7 @@ module.exports.signUp = async (req, res) => {
       password,
       pseudo,
       email,
-      picture,
-      bio,
     });
-    res.redirect("/dashboard");
     res.status(201).json({ user: user._id });
   } catch (err) {
     const errors = signUpErrors(err);
@@ -47,6 +42,5 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.logout = (req, res) => {
   res.cookie("jwt", "", { maxAge: 1 });
-  console.log(req.cookie);
   res.redirect("/");
 };

@@ -20,8 +20,8 @@ const userSchema = new mongoose.Schema(
     identifiant: {
       type: String,
       required: true,
-      minLength: 4,
-      maxLength: 55,
+      minLength: 3,
+      maxLength: 50,
       unique: true,
       trim: true,
     },
@@ -54,6 +54,7 @@ const userSchema = new mongoose.Schema(
     bio: {
       type: String,
       max: 4096,
+      default: "À compléter",
     },
   },
   {

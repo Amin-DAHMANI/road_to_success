@@ -20,7 +20,9 @@ function InputOptionList({
       >
         <option value="">{textSelect}</option>
         {options.map((entry) => (
-          <option value={entry.value}>{entry.name}</option>
+          <option value={entry.value} key={entry.value}>
+            {entry.name}
+          </option>
         ))}
       </select>
     </label>

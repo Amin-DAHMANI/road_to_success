@@ -9,20 +9,20 @@ const { checkUser, requireAuth } = require("./middlewares/auth.middleware.js");
 dotenv.config({ path: "./config/.env" });
 require("./config/db");
 
+const cors = require("cors");
+
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
-});
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
+  exposedHeaders: ["sessionId"],
+  methods: "GET, POST, PUT, DELETE, HEAD, PATCH",
+  preflightContinue: false,
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -58,7 +58,7 @@ const normalizePort = (val) => {
   return false;
 };
 
-const port = normalizePort(process.env.PORT || 3000);
+const port = normalizePort(process.env.PORT || 5000);
 app.set("port", port);
 
 const errorHandler = (error) => {
