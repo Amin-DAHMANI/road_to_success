@@ -27,7 +27,7 @@ function Registration() {
     e.preventDefault();
     axios({
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/api/user/inscription`,
+      url: `${process.env.REACT_APP_API_URL}api/user/inscription`,
       withCredentials: true,
       data: {
         category: categoryRegistration,
