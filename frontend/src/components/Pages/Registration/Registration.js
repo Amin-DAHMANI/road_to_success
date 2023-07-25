@@ -27,7 +27,7 @@ function Registration() {
     e.preventDefault();
     axios({
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}api/user/inscription`,
+      url: `${process.env.REACT_APP_API_URL}/api/user/inscription`,
       withCredentials: true,
       data: {
         category: categoryRegistration,
@@ -38,7 +38,6 @@ function Registration() {
       },
     })
       .then((res) => {
-        console.log(res);
         if (res.data.errors) {
           identifiantError.innerHTML = res.data.errors.identifiant;
           passwordError.innerHTML = res.data.errors.password;

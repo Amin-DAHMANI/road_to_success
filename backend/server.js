@@ -39,7 +39,7 @@ const fieldRoutes = require("./routes/field.routes");
 
 app.use("/api/field", fieldRoutes);
 
-app.use("/api/user", userRoutes);
+app.use("/api/user/", userRoutes);
 app.use("/api/user/:id", userRoutes);
 
 const path = require("node:path");
