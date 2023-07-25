@@ -54,7 +54,6 @@ function Registration() {
           pseudoError.innerHTML = res.data.errors.pseudo;
           emailError.innerHTML = res.data.errors.email;
         } else {
-          res.status(201).json({ message: "Utilisateur crée" });
           window.location = "/dashboard";
         }
       })
