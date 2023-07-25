@@ -1,6 +1,7 @@
 import axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Main from "../../Structure/Main/Main";
 import InputText from "../../Reusable/InputText";
@@ -10,12 +11,14 @@ import InputEmail from "../../Reusable/InputEmail";
 import ButtonForm from "../../Reusable/ButtonForm";
 
 function Registration() {
+  const test = useLocation();
   const [categoryRegistration, setCategoryRegistration] = useState("");
   const [identifiantRegistration, setIdentifiantRegistration] = useState("");
   const [passwordRegistration, setPasswordRegistration] = useState("");
   const [pseudoRegistration, setPseudoRegistration] = useState("");
   const [emailRegistration, setEmailRegistration] = useState("");
 
+  useEffect(() => console.log(test), [test]);
   const identifiantError = document.getElementById(
     "errorIdentifiantRegistration"
   );
@@ -23,11 +26,18 @@ function Registration() {
   const pseudoError = document.getElementById("errorPseudoRegistration");
   const emailError = document.getElementById("errorEmailRegistration");
 
-  const handleRegistration = (e) => {
+  const handleRegistration = async (e) => {
+    console.log(
+      categoryRegistration,
+      identifiantRegistration,
+      passwordRegistration,
+      pseudoRegistration,
+      emailRegistration
+    );
     e.preventDefault();
-    axios({
+    await axios({
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/api/user/inscription`,
+      url: `${process.env.REACT_APP_API_URL}api/user/inscription`,
       withCredentials: true,
       data: {
         category: categoryRegistration,
