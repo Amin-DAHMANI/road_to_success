@@ -38,6 +38,7 @@ function Registration() {
       },
     })
       .then((res) => {
+        console.log(res);
         if (res.data.errors) {
           identifiantError.innerHTML = res.data.errors.identifiant;
           passwordError.innerHTML = res.data.errors.password;
