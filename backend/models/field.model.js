@@ -10,8 +10,13 @@ const fieldSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+    numberLevels: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
     numberCourses: {
-      bsonType: "Int",
+      type: Number,
       required: true,
       default: 0,
     },

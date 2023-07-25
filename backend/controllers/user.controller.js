@@ -6,7 +6,7 @@ module.exports.getAllUsers = async (req, res) => {
   try {
     const users = await UserModel.find().select("-password");
     res.status(201).json(users);
-  } catch {
+  } catch (err) {
     res.status(400).json({ err });
   }
 };

@@ -29,12 +29,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.get("/test", checkUser);
+app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });
 
 const userRoutes = require("./routes/user.routes");
+const fieldRoutes = require("./routes/field.routes");
+
+app.use("/api/field", fieldRoutes);
 
 app.use("/api/user", userRoutes);
 app.use("/api/user/:id", userRoutes);

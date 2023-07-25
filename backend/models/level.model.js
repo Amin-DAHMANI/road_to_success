@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const levelSchema = new mongoose.Schema(
   {
     level: {
-      type: String,
-      enum: ["", 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      type: Number,
+      enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     },
     numberCourses: {
       bsonType: "Int",
