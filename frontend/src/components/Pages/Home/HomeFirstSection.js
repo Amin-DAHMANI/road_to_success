@@ -13,6 +13,7 @@ function HomeFirstSection() {
         </h1>
         <div id="homeFirstSectionParagraph">
           <ul>
+            <li>Petit texte pour faire passer un push</li>
             <li>
               Road To Success, c'est un projet dedié à l'enseignement et au
               développement personnel !
