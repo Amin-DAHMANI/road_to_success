@@ -27,13 +27,7 @@ function Registration() {
   const emailError = document.getElementById("errorEmailRegistration");
 
   const handleRegistration = async (e) => {
-    console.log(
-      categoryRegistration,
-      identifiantRegistration,
-      passwordRegistration,
-      pseudoRegistration,
-      emailRegistration
-    );
+    console.log(`${process.env.REACT_APP_API_URL}api/user/inscription`);
     e.preventDefault();
     axios({
       method: "post",
