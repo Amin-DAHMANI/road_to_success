@@ -46,9 +46,9 @@ const path = require("node:path");
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
-/*app.get("*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
-});*/
+});
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
