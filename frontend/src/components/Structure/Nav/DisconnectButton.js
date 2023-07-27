@@ -19,6 +19,7 @@ function DisconnectButton() {
       .catch((err) => {
         console.log(err);
       });
+    window.location = "/";
   };
   return (
     <div id="disconnectButton" onClick={logout}>
