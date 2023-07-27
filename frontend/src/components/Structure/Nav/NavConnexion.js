@@ -4,6 +4,7 @@ import { DashboardContext } from "../../../utils/context/DashboardContext";
 import { AuthContext } from "../../../utils/context/AuthContext";
 
 import NavLink from "./NavLink";
+import DisconnectButton from "./DisconnectButton";
 
 function NavConnexion() {
   const { showNavConnexion, setTransitionNavConnexion } =
@@ -22,9 +23,7 @@ function NavConnexion() {
       <NavLink path="/inscription">Inscription</NavLink>
       <hr />
       {UserID ? (
-        <NavLink path={process.env.CLIENT_URL + "api/user/logout"}>
-          Déconnexion
-        </NavLink>
+        <DisconnectButton />
       ) : (
         <NavLink path="/connexion">Connexion</NavLink>
       )}

@@ -31,7 +31,7 @@ function Registration() {
 
   const [succededRegistration, setSuccededRegistration] = useState(false);
 
-  const handleRegistration = async (e) => {
+  const handleRegistration = (e) => {
     console.log(`${process.env.REACT_APP_API_URL}api/user/inscription`);
     e.preventDefault();
     setIdentifiantRegistrationError(false);
