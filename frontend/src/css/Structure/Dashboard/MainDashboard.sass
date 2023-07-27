@@ -1,54 +1,11 @@
 #mainDashboard
-  position: absolute
-  top: 100px
-  right: 20px
-  left: 20px
-  border-radius: 5px
-  background: $_color_neumorphism_background
-  box-shadow: 10px 10px 30px $_color_neumorphism_shadow, -10px -10px 30px #ffffff
-  overflow-x: auto
-
-#mainDashboard thead
-  background-color: $_color_dark_grey
-  color: $_color_white
-
-#mainDashboard td
-  border-radius: 5px
-
-#mainDashboard .impairLine
-  background-color: $_color_impair_line_dashboard
-
-.checkboxColumn
-  width: 40px
-
-.deleteButton, .updateButton
-  display: block
-  width: 25px
-  padding: 6px
-  border-radius: 5px
-  margin: auto
-
-.deleteButton:hover, .updateButton:hover
-  box-shadow: 0 0 20px $_color_black
-  cursor: pointer
-
-.deleteButton
-  background-color: $_color_red
-
-.updateButton
-  background-color: $_color_blue
-
-.updateColumn, .deleteColumn
-  width: 75px
-
-td
-  padding: 5px
-  text-align: center
-
-.tdAlignLeft
-  text-align: left
+  margin-top: 100px
+  margin-right: 20px
+  margin-left: 20px
 
 @media screen and (min-width: 800px)
   #mainDashboard
-    width: 75%
-    left: auto
+    position: fixed
+    width: calc(100% - 260px)
+    right: 0
+    margin-left: 20px

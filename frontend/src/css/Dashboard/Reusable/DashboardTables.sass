@@ -1,0 +1,32 @@
+@import "./../Accounts/DashboardTableAccounts"
+@import "./../Fields/DashboardTableFields"
+@import "./../Levels/DashboardTableLevels"
+
+#containerDashboardTables
+  display: block
+  overflow-x: auto
+
+.dashboardTables
+  width: 100%
+
+.dashboardTables thead
+  background-color: $_color_dark_grey
+  color: $_color_white
+
+.dashboardTables td
+  padding: 5px
+  border-radius: 5px
+
+.checkColumn
+  width: 40px
+
+.actionsColumn
+  display: flex
+  justify-content: center
+  align-items: center
+
+.impairLine
+  background-color: $_color_impair_line_dashboard
+
+.pairLine
+  background-color: $_color_pair_line_dashboard

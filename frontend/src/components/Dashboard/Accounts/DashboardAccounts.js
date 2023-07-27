@@ -1,6 +1,7 @@
 import DashboardTableAccounts from "./DashboardTableAccounts";
 
 import MainDashboard from "../../Structure/Dashboard/MainDashboard";
+import CreateIcon from "./../../Reusable/CreateIcon";
 
 import NavDashboard from "../../Structure/Dashboard/NavDashboard";
 import NavDashboardMobileButton from "../../Structure/Dashboard/NavDashboardMobileButton";
@@ -13,11 +14,16 @@ function DashboardAccounts() {
   const { UserID } = useContext(AuthContext);
   return (
     <section id="dashboardAccounts">
-      <NavDashboard />
-      <MainDashboard>
-        <DashboardTableAccounts />
-      </MainDashboard>
-      <NavDashboardMobileButton />
+      <>
+        <NavDashboard />
+        <NavDashboardMobileButton />
+      </>
+      {UserID && (
+        <MainDashboard>
+          <DashboardTableAccounts />
+          <CreateIcon />
+        </MainDashboard>
+      )}
     </section>
   );
 }

@@ -7,7 +7,7 @@ function Header() {
     <div id="header">
       <NavMobileButton />
       <LogoHeader />
-      <NavConnexionButton img="./assets/images/profile_images/photo_profil_amin.jpg" />
+      <NavConnexionButton img="/assets/images/profile_images/photo_profil_amin.jpg" />
     </div>
   );
 }

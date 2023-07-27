@@ -4,11 +4,13 @@ import { useState, useEffect, useContext } from "react";
 
 import { AuthContext } from "./../../../utils/context/AuthContext";
 
+import ShowIcon from "./../../Reusable/ShowIcon";
+import UpdateIcon from "./../../Reusable/UpdateIcon";
+import DeleteIcon from "./../../Reusable/DeleteIcon";
+
 function DashboardTableAccounts() {
   const { UserID } = useContext(AuthContext);
   const [tableAccounts, setTableAccounts] = useState([]);
-  const deleteIconLink = "./../assets/images/icone_images/delete.png";
-  const updateIconLink = "./../assets/images/icone_images/update.png";
 
   useEffect(() => {
     const arrayAccounts = [];
@@ -28,41 +30,28 @@ function DashboardTableAccounts() {
     fetchAccounts();
   }, [tableAccounts]);
 
-  const handleDeleteAccount = (id) => {
-    axios({
-      method: "delete",
-      url: `${process.env.REACT_APP_API_URL}api/user/${id}`,
-      withCredentials: true,
-    })
-      .then((res) => {
-        res.status(200).send({ message: "Compte supprímé" });
-      })
-      .catch((err) => {
-        console.log({ err });
-      });
-  };
+  const handleShowAccount = (id) => {};
 
   const handleUpdateAccount = (id) => {};
 
   return (
-    <>
+    <div id="containerDashboardTables">
       {UserID ? (
-        <table id="dashboardTableAccounts">
+        <table id="dashboardTableAccounts" className="dashboardTables">
           <thead>
             <tr>
               <td className="checkboxColumn">
                 <input type="checkbox" />
               </td>
-              <td className="tdAlignLeft">Catégorie</td>
-              <td className="tdAlignLeft">Identifiant</td>
-              <td className="tdAlignLeft">Pseudo</td>
-              <td className="tdAlignLeft">Email</td>
-              <td className="tdAlignLeft">Photo de profil</td>
-              <td className="tdAlignLeft">Biographie</td>
-              <td className="tdAlignLeft">Date de création</td>
-              <td className="tdAlignLeft">Date de modification</td>
-              <td className="updateColumn">Modifier</td>
-              <td className="deleteColumn">Supprimer</td>
+              <td>Catégorie</td>
+              <td>Identifiant</td>
+              <td>Pseudo</td>
+              <td>Email</td>
+              <td>Photo de profil</td>
+              <td>Biographie</td>
+              <td>Date de création</td>
+              <td>Date de modification</td>
+              <td>Actions</td>
             </tr>
           </thead>
           <tbody>
@@ -84,23 +73,12 @@ function DashboardTableAccounts() {
                 <td>{account.bio}</td>
                 <td>{account.createdAt}</td>
                 <td>{account.updatedAt}</td>
-                <td>
-                  <img
-                    className="updateButton"
-                    src={updateIconLink}
-                    alt="Modifier l'entrée"
-                    title="Modifier l'entrée"
+                <td className="actionsColumn">
+                  <ShowIcon onClick={() => handleShowAccount(account._id)} />
+                  <UpdateIcon
                     onClick={() => handleUpdateAccount(account._id)}
                   />
-                </td>
-                <td>
-                  <img
-                    className="deleteButton"
-                    src={deleteIconLink}
-                    alt="Supprimer l'entrée"
-                    title="Supprimer l'entrée"
-                    onClick={() => handleDeleteAccount(account._id)}
-                  />
+                  <DeleteIcon id={account._id} />
                 </td>
               </tr>
             ))}
@@ -111,7 +89,7 @@ function DashboardTableAccounts() {
           Vous devez être connecté pour consulter ces données.
         </div>
       )}
-    </>
+    </div>
   );
 }
 

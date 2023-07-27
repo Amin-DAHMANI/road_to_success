@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Main from "../../Structure/Main/Main";
 import InputText from "../../Reusable/InputText";

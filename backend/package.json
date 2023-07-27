@@ -14,7 +14,7 @@
   "engines": {
     "node": "18.16.0"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://road-to-success-6253cc697fea.herokuapp.com/",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
