@@ -9,7 +9,7 @@ function DisconnectButton() {
   };
   const logout = async () => {
     await axios({
-      method: "head",
+      method: "get",
       url: `${process.env.REACT_APP_API_URL}api/user/deconnexion`,
       withCredentials: true,
     })
