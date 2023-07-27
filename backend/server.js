@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
-  if (res.locals.user !== null) {
+  if (res.locals.user) {
     res.status(200).send(res.locals.user._id);
   }
 });
@@ -48,9 +48,8 @@ const path = require("node:path");
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
-app.get("*", (req, res, next) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
-  next();
 });
 
 const normalizePort = (val) => {
