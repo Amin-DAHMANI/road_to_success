@@ -20,19 +20,24 @@ function NavConnexion() {
         setTransitionNavConnexion(false);
       }}
     >
-      <NavLink path="/inscription">Inscription</NavLink>
-      <hr />
       {UserID ? (
         <DisconnectButton />
       ) : (
-        <NavLink path="/connexion">Connexion</NavLink>
+        <>
+          <NavLink path="/inscription">Inscription</NavLink>
+          <hr />
+          <NavLink path="/connexion">Connexion</NavLink>
+        </>
       )}
-
       <hr />
-      {inDashboard ? (
-        <NavLink path="/accueil">Website</NavLink>
+      {UserID ? (
+        inDashboard ? (
+          <NavLink path="/accueil">Website</NavLink>
+        ) : (
+          <NavLink path="/dashboard">Dashboard</NavLink>
+        )
       ) : (
-        <NavLink path="/dashboard">Dashboard</NavLink>
+        <></>
       )}
     </nav>
   );

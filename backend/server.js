@@ -31,7 +31,9 @@ app.use(cookieParser());
 
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
-  res.status(200).send(res.locals.user._id);
+  if (res.locals.user !== null) {
+    res.status(200).send(res.locals.user._id);
+  }
 });
 
 const userRoutes = require("./routes/user.routes");
@@ -46,8 +48,9 @@ const path = require("node:path");
 
 app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
+app.get("*", (req, res, next) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
+  next();
 });
 
 const normalizePort = (val) => {

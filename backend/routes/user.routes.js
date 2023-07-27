@@ -5,7 +5,7 @@ const userController = require("../controllers/user.controller");
 // Authentification
 router.post("/inscription", authController.signUp);
 router.post("/connexion", authController.signIn);
-router.get("/deconnexion", authController.logout);
+router.head("/deconnexion", authController.logout);
 
 //User DB
 router.get("/", userController.getAllUsers);

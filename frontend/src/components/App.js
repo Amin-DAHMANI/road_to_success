@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-import axios from "axios";
 
 import { ResizeProvider } from "../utils/context/ResizeContext";
 import { AllNavProvider } from "../utils/context/AllNavContext";

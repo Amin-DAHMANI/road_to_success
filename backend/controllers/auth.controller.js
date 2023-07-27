@@ -9,7 +9,7 @@ const createToken = (id) => {
   });
 };
 
-module.exports.signUp = async (req, res) => {
+module.exports.signUp = async (req, res, next) => {
   const { category, identifiant, password, pseudo, email } = req.body;
   try {
     const user = await UserModel.create({
@@ -20,27 +20,31 @@ module.exports.signUp = async (req, res) => {
       email,
     });
     res.status(201).json({ user: user._id });
+    next();
   } catch (err) {
     const errors = signUpErrors(err);
     res.status(200).send({ errors });
+    next();
   }
 };
 
-module.exports.signIn = async (req, res) => {
+module.exports.signIn = async (req, res, next) => {
   const { identifiant, password } = req.body;
-
   try {
     const user = await UserModel.login(identifiant, password);
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge });
     res.status(200).json({ user: user._id });
+    next();
   } catch (err) {
     const errors = signInErrors(err);
     res.status(200).json({ errors });
+    next();
   }
 };
 
-module.exports.logout = (req, res) => {
+module.exports.logout = (req, res, next) => {
   res.cookie("jwt", "", { maxAge: 1 });
   res.redirect("/");
+  next();
 };

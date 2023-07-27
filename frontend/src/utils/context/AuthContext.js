@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [UserID, setUserID] = useState(null);
 
   useEffect(() => {
-    console.log(UserID);
     const fetchToken = async () => {
       await axios({
         method: "get",
@@ -19,7 +18,7 @@ export const AuthProvider = ({ children }) => {
           setUserID(res.data);
         })
         .catch((err) => {
-          console.log("No Token");
+          console.log(err);
         });
     };
     fetchToken();

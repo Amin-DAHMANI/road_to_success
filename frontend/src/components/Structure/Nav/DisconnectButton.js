@@ -9,17 +9,21 @@ function DisconnectButton() {
   };
   const logout = async () => {
     await axios({
-      method: "get",
+      method: "head",
       url: `${process.env.REACT_APP_API_URL}api/user/deconnexion`,
       withCredentials: true,
     })
-      .then(() => removeCookie("jwt"))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        removeCookie("jwt");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
-    <button type="button" id="disconnectButton" onClick={logout}>
+    <div id="disconnectButton" onClick={logout}>
       Déconnexion
-    </button>
+    </div>
   );
 }
 
