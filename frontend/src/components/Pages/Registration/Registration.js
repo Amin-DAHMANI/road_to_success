@@ -1,7 +1,6 @@
 import axios from "axios";
 
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 import Main from "../../Structure/Main/Main";
 import InputText from "../../Reusable/InputText";
@@ -11,49 +10,80 @@ import InputEmail from "../../Reusable/InputEmail";
 import ButtonForm from "../../Reusable/ButtonForm";
 
 function Registration() {
-  const test = useLocation();
   const [categoryRegistration, setCategoryRegistration] = useState("");
   const [identifiantRegistration, setIdentifiantRegistration] = useState("");
   const [passwordRegistration, setPasswordRegistration] = useState("");
+  const [passwordControlRegistration, setPasswordControlRegistration] =
+    useState("");
   const [pseudoRegistration, setPseudoRegistration] = useState("");
   const [emailRegistration, setEmailRegistration] = useState("");
 
-  useEffect(() => console.log(test), [test]);
-  const identifiantError = document.getElementById(
-    "errorIdentifiantRegistration"
-  );
-  const passwordError = document.getElementById("errorPasswordRegistration");
-  const pseudoError = document.getElementById("errorPseudoRegistration");
-  const emailError = document.getElementById("errorEmailRegistration");
+  const [identifiantRegistrationError, setIdentifiantRegistrationError] =
+    useState("");
+  const [passwordRegistrationError, setPasswordRegistrationError] =
+    useState("");
+  const [
+    passwordControlRegistrationError,
+    setPasswordControlRegistrationError,
+  ] = useState("");
+  const [pseudoRegistrationError, setPseudoRegistrationError] = useState("");
+  const [emailRegistrationError, setEmailRegistrationError] = useState("");
+
+  const [succededRegistration, setSuccededRegistration] = useState(false);
 
   const handleRegistration = async (e) => {
     console.log(`${process.env.REACT_APP_API_URL}api/user/inscription`);
     e.preventDefault();
-    axios({
-      method: "post",
-      url: `${process.env.REACT_APP_API_URL}api/user/inscription`,
-      withCredentials: true,
-      data: {
-        category: categoryRegistration,
-        identifiant: identifiantRegistration,
-        password: passwordRegistration,
-        pseudo: pseudoRegistration,
-        email: emailRegistration,
-      },
-    })
-      .then((res) => {
-        if (res.data.errors) {
-          identifiantError.innerHTML = res.data.errors.identifiant;
-          passwordError.innerHTML = res.data.errors.password;
-          pseudoError.innerHTML = res.data.errors.pseudo;
-          emailError.innerHTML = res.data.errors.email;
-        } else {
-          window.location = "/dashboard";
-        }
+    setIdentifiantRegistrationError(false);
+    setPasswordRegistrationError(false);
+    setPasswordControlRegistrationError(false);
+    setPseudoRegistrationError(false);
+    setEmailRegistrationError(false);
+    if (passwordRegistration === passwordControlRegistration) {
+      axios({
+        method: "post",
+        url: `${process.env.REACT_APP_API_URL}api/user/inscription`,
+        withCredentials: true,
+        data: {
+          category: categoryRegistration,
+          identifiant: identifiantRegistration,
+          password: passwordRegistration,
+          pseudo: pseudoRegistration,
+          email: emailRegistration,
+        },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => {
+          if (res.data.errors) {
+            if (
+              res.data.errors.identifiant !== "" &&
+              res.data.errors.identifiant
+            ) {
+              setIdentifiantRegistrationError(res.data.errors.identifiant);
+              console.log(identifiantRegistrationError);
+            }
+            if (res.data.errors.password !== "" && res.data.errors.password) {
+              setPasswordRegistrationError(res.data.errors.password);
+            }
+            if (res.data.errors.pseudo !== "" && res.data.errors.pseudo) {
+              setPseudoRegistrationError(res.data.errors.pseudo);
+            }
+            if (res.data.errors.email !== "" && res.data.errors.email) {
+              setEmailRegistrationError(res.data.errors.email);
+            }
+          } else {
+            setSuccededRegistration(
+              "Inscription réussie, vous pouvez vous connecter."
+            );
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setPasswordControlRegistrationError(
+        "Les mots de passe doivent être identiques"
+      );
+    }
   };
 
   const handleCategoryRegistration = (e) => {
@@ -67,6 +97,10 @@ function Registration() {
     setPasswordRegistration(e.target.value);
   };
 
+  const handlePasswordControlRegistration = (e) => {
+    setPasswordControlRegistration(e.target.value);
+  };
+
   const handlePseudoRegistration = (e) => {
     setPseudoRegistration(e.target.value);
   };
@@ -78,6 +112,9 @@ function Registration() {
   return (
     <Main>
       <section className="page" id="registrationSection">
+        {succededRegistration && (
+          <div id="succededRegistration">{succededRegistration}</div>
+        )}
         <form
           className="form"
           onSubmit={handleRegistration}
@@ -114,16 +151,37 @@ function Registration() {
             value={identifiantRegistration}
             setValue={handleIdentifiantRegistration}
           />
-          <div id="errorIdentifiantRegistration"></div>
+          {identifiantRegistrationError && (
+            <div id="errorIdentifiantRegistration">
+              {identifiantRegistrationError}
+            </div>
+          )}
           <InputPassword
-            label={"Mot de Passe"}
+            label={"Mot de passe"}
             forid={"passwordRegistration"}
             id={"passwordRegistration"}
             name={"passwordRegistration"}
             value={passwordRegistration}
             setValue={handlePasswordRegistration}
           />
-          <div id="errorPasswordRegistration"></div>
+          {passwordRegistrationError && (
+            <div id="errorPasswordRegistration">
+              {passwordRegistrationError}
+            </div>
+          )}
+          <InputPassword
+            label={"Confirmation du mot de passe"}
+            forid={"passwordControlRegistration"}
+            id={"passwordControlRegistration"}
+            name={"passwordControlRegistration"}
+            value={passwordControlRegistration}
+            setValue={handlePasswordControlRegistration}
+          />
+          {passwordControlRegistrationError && (
+            <div id="errorPasswordControlRegistration">
+              {passwordControlRegistrationError}
+            </div>
+          )}
           <InputText
             label={"Pseudo"}
             forid={"pseudoRegistration"}
@@ -132,7 +190,9 @@ function Registration() {
             value={pseudoRegistration}
             setValue={handlePseudoRegistration}
           />
-          <div id="errorPseudoRegistration"></div>
+          {pseudoRegistrationError && (
+            <div id="errorPseudoRegistration">{pseudoRegistrationError}</div>
+          )}
           <InputEmail
             label={"Email"}
             forid={"emailRegistration"}
@@ -141,7 +201,9 @@ function Registration() {
             value={emailRegistration}
             setValue={handleEmailRegistration}
           />
-          <div id="errorEmailRegistration"></div>
+          {emailRegistrationError && (
+            <div id="errorEmailRegistration">{emailRegistrationError}</div>
+          )}
           <ButtonForm id="buttonRegistration">Inscription</ButtonForm>
         </form>
       </section>
