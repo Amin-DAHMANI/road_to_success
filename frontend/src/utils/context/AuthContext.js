@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
     };
     fetchToken();
   }, [UserID]);
+
   return (
     <AuthContext.Provider value={{ UserID }}>{children}</AuthContext.Provider>
   );

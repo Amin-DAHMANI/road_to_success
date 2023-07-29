@@ -4,7 +4,7 @@ import cookie from "js-cookie";
 function DisconnectButton() {
   const removeCookie = () => {
     if (window !== "undefined") {
-      cookie.remove("jwt", { expires: 1 });
+      cookie.remove("roadtosuccess", { expires: 1 });
     }
   };
   const logout = async () => {
@@ -14,7 +14,7 @@ function DisconnectButton() {
       withCredentials: true,
     })
       .then((res) => {
-        removeCookie("jwt");
+        removeCookie("roadtosuccess");
       })
       .catch((err) => {
         console.log(err);

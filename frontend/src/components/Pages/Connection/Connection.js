@@ -11,11 +11,14 @@ function Connection() {
   const [identifiantConnexion, setIdentifiantConnexion] = useState("");
   const [passwordConnexion, setPasswordConnexion] = useState("");
 
-  const identifiantError = document.getElementById("errorIdentifiantConnexion");
-  const passwordError = document.getElementById("errorPasswordConnexion");
+  const [identifiantConnexionError, setIdentifiantConnexionError] =
+    useState(false);
+  const [passwordConnexionError, setPasswordConnexionError] = useState(false);
 
   const handleConnexion = (e) => {
     e.preventDefault();
+    setIdentifiantConnexionError(false);
+    setPasswordConnexionError(false);
     axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}api/user/connexion`,
@@ -27,8 +30,15 @@ function Connection() {
     })
       .then((res) => {
         if (res.data.errors) {
-          identifiantError.innerHTML = res.data.errors.identifiant;
-          passwordError.innerHTML = res.data.errors.password;
+          if (
+            res.data.errors.identifiant &&
+            res.data.errors.identifiant !== ""
+          ) {
+            setIdentifiantConnexionError(true);
+          }
+          if (res.data.errors.password && res.data.errors.password !== "") {
+            setPasswordConnexionError(true);
+          }
         } else {
           window.location = "/dashboard";
         }
@@ -58,7 +68,11 @@ function Connection() {
             value={identifiantConnexion}
             setValue={handleIdentifiantConnexion}
           />
-          <div id="errorIdentifiantConnexion"></div>
+          {identifiantConnexionError && (
+            <div id="errorIdentifiantConnexion">
+              L'identifiant est incorrect ou n'existe pas.
+            </div>
+          )}
           <InputPassword
             label={"Mot de Passe"}
             forid={"passwordConnexion"}
@@ -67,7 +81,11 @@ function Connection() {
             value={passwordConnexion}
             setValue={handlePasswordConnexion}
           />
-          <div id="errorIdentifiantConnexion"></div>
+          {passwordConnexionError && (
+            <div id="errorPasswordConnexion">
+              Le mot de passe est incorrect.
+            </div>
+          )}
           <ButtonForm id="buttonConnexion">Connexion</ButtonForm>
         </form>
       </section>

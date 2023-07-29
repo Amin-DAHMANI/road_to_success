@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
-      default: "./uploads/profil_images/rainbow_trophy.png",
+      default: null,
     },
     bio: {
       type: String,

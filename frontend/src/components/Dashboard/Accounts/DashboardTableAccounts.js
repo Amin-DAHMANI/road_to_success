@@ -58,9 +58,7 @@ function DashboardTableAccounts() {
             {tableAccounts.map((account, index) => (
               <tr
                 key={index}
-                className={
-                  index % 2 === 0 || index === 0 ? "pairLine" : "impairLine"
-                }
+                className={(index + 1) % 2 === 0 ? "pairLine" : "impairLine"}
               >
                 <td>
                   <input type="checkbox" />

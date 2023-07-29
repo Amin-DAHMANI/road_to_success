@@ -33,7 +33,7 @@ module.exports.signIn = async (req, res, next) => {
   try {
     const user = await UserModel.login(identifiant, password);
     const token = createToken(user._id);
-    res.cookie("jwt", token, { httpOnly: true, maxAge });
+    res.cookie("roadtosuccess", token, { httpOnly: true, maxAge });
     res.status(200).json({ user: user._id });
     next();
   } catch (err) {
@@ -44,7 +44,7 @@ module.exports.signIn = async (req, res, next) => {
 };
 
 module.exports.logout = (req, res, next) => {
-  res.cookie("jwt", "", { maxAge: 1 });
+  res.cookie("roadtosuccess", "", { maxAge: 1 });
   res.redirect("/");
   next();
 };

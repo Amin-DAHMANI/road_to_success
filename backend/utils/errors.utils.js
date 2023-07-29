@@ -42,3 +42,15 @@ module.exports.signInErrors = (err) => {
 
   return errors;
 };
+
+module.exports.uploadPhotoProfilErrors = (err) => {
+  let errors = { format: "", maxsize: "" };
+
+  if (err.message.includes("BadFormat"))
+    errors.format =
+      "Le format du fichier n'est pas compatible, seuls jpg, jpeg et png sont acceptés";
+
+  if (err.message.includes("MaxSize"))
+    errors.maxsize =
+      "Le fichier est trop volumineux, la taille maximum du fichier doit être de 500 Ko";
+};

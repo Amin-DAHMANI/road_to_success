@@ -59,7 +59,6 @@ function Registration() {
               res.data.errors.identifiant
             ) {
               setIdentifiantRegistrationError(res.data.errors.identifiant);
-              console.log(identifiantRegistrationError);
             }
             if (res.data.errors.password !== "" && res.data.errors.password) {
               setPasswordRegistrationError(res.data.errors.password);
