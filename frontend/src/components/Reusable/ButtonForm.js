@@ -1,7 +1,7 @@
 function ButtonForm(props) {
   return (
     <div className="containerButtonForm">
-      <button type="submit" className="buttonForm">
+      <button type="submit" form={props.formid} className="buttonForm">
         {props.children}
       </button>
     </div>

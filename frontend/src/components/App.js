@@ -12,7 +12,7 @@ import Footer from "./Structure/Footer/Footer";
 
 import Home from "./Pages/Home/Home";
 import Courses from "./Pages/Courses/Courses";
-import Connexion from "./Pages/Connection/Connection";
+import Connection from "./Pages/Connection/Connection";
 import Registration from "./Pages/Registration/Registration";
 import NotFound from "./Pages/NotFound/NotFound";
 
@@ -36,7 +36,7 @@ function App() {
                   <Route index element={<Home />} />
                   <Route path="/accueil" element={<Home />} />
                   <Route path="/cours" element={<Courses />} />
-                  <Route path="/connexion" element={<Connexion />} />
+                  <Route path="/connexion" element={<Connection />} />
                   <Route path="/inscription" element={<Registration />} />
                   <Route path="/dashboard" element={<DashboardHome />} />
                   <Route

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Main from "../../Structure/Main/Main";
 import InputText from "../../Reusable/InputText";
@@ -15,7 +15,12 @@ function Connection() {
     useState(false);
   const [passwordConnexionError, setPasswordConnexionError] = useState(false);
 
+  useEffect(() => {
+    console.log("Component did mount / did update");
+  }, []);
+
   const handleConnexion = (e) => {
+    console.log("On Submit");
     e.preventDefault();
     setIdentifiantConnexionError(false);
     setPasswordConnexionError(false);
@@ -59,7 +64,13 @@ function Connection() {
   return (
     <Main>
       <section className="page" id="connexionSection">
-        <form className="form" onSubmit={handleConnexion} id="connexionForm">
+        <form
+          action="POST"
+          method="#"
+          className="form"
+          onSubmit={handleConnexion}
+          id="connexionForm"
+        >
           <InputText
             label={"Identifiant"}
             forid={"identifiantConnexion"}
@@ -86,7 +97,9 @@ function Connection() {
               Le mot de passe est incorrect.
             </div>
           )}
-          <ButtonForm id="buttonConnexion">Connexion</ButtonForm>
+          <ButtonForm id="buttonConnexion" formid="connexionForm">
+            Connexion
+          </ButtonForm>
         </form>
       </section>
     </Main>

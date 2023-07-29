@@ -17,9 +17,7 @@ function ConnectionIcon({ showNav }) {
       responseType: "json",
     })
       .then((res) => {
-        const picturePath =
-          "/assets/uploads/images/profile_images/" + res.data.picture;
-        setUserPicture(picturePath);
+        setUserPicture(res.data.picture);
         console.log(userPicture);
       })
       .catch((err) => {
@@ -28,14 +26,16 @@ function ConnectionIcon({ showNav }) {
   };
 
   useEffect(() => {
-    fetchUser();
+    if (UserID !== null && userPicture !== null) {
+      fetchUser();
+    }
   }, [UserID, userPicture]);
 
   return (
     <>
-      {UserID ? (
+      {UserID && userPicture !== null ? (
         <img
-          src={userPicture}
+          src={"/assets/uploads/images/profile_images/" + userPicture}
           alt="Mon compte Road To Success"
           title="Mon compte Road To Success"
           id="connectionIcon"
