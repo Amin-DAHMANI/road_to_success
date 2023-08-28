@@ -54,7 +54,7 @@ const userSchema = new mongoose.Schema(
     bio: {
       type: String,
       max: 4096,
-      default: "À compléter",
+      default: null,
     },
   },
   {

@@ -35,8 +35,8 @@ function HomeFirstSection() {
               importe le niveau où l'age !
             </li>
             <li>
-              Road To Success, c'est une tonne de cours tousaussi passionant les
-              uns que les autres !
+              Road To Success, c'est une tonne de cours tous aussi passionant
+              les uns que les autres !
             </li>
           </ul>
           Convaincu ? Clique vite sur le bouton en-dessous pour accéder à tous

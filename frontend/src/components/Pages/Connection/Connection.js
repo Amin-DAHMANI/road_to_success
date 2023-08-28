@@ -19,19 +19,21 @@ function Connection() {
     console.log("Component did mount / did update");
   }, []);
 
-  const handleConnexion = (e) => {
+  const handleConnexion = async (e) => {
     console.log("On Submit");
     e.preventDefault();
     setIdentifiantConnexionError(false);
     setPasswordConnexionError(false);
-    axios({
+    const formData = {
+      identifiant: identifiantConnexion,
+      password: passwordConnexion,
+    };
+    await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}api/user/connexion`,
       withCredentials: true,
-      data: {
-        identifiant: identifiantConnexion,
-        password: passwordConnexion,
-      },
+      "Content-Type": "application/json",
+      data: formData,
     })
       .then((res) => {
         if (res.data.errors) {

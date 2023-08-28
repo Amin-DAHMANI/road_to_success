@@ -1,4 +1,4 @@
-function CreateIcon() {
+function CreateButton() {
   const createIconLink = "/assets/images/icone_images/plus.svg";
   return (
     <img
@@ -10,4 +10,4 @@ function CreateIcon() {
   );
 }
 
-export default CreateIcon;
+export default CreateButton;

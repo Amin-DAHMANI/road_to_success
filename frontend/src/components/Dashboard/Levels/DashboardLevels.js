@@ -1,7 +1,6 @@
 import DashboardTableLevels from "./DashboardTableLevels";
 
 import MainDashboard from "../../Structure/Dashboard/MainDashboard";
-import CreateIcon from "./../../Reusable/CreateIcon";
 
 import NavDashboard from "../../Structure/Dashboard/NavDashboard";
 import NavDashboardMobileButton from "../../Structure/Dashboard/NavDashboardMobileButton";
@@ -19,7 +18,6 @@ function DashboardLevels() {
       {UserID && (
         <MainDashboard>
           <DashboardTableLevels />
-          <CreateIcon />
         </MainDashboard>
       )}
       <NavDashboardMobileButton />

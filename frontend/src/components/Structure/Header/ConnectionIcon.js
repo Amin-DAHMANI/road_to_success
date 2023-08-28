@@ -14,11 +14,9 @@ function ConnectionIcon({ showNav }) {
       method: "get",
       url: `${process.env.REACT_APP_API_URL}api/user/` + UserID,
       withCredentials: true,
-      responseType: "json",
     })
       .then((res) => {
         setUserPicture(res.data.picture);
-        console.log(userPicture);
       })
       .catch((err) => {
         console.log(err);
@@ -26,9 +24,7 @@ function ConnectionIcon({ showNav }) {
   };
 
   useEffect(() => {
-    if (UserID !== null && userPicture !== null) {
-      fetchUser();
-    }
+    fetchUser();
   }, [UserID, userPicture]);
 
   return (

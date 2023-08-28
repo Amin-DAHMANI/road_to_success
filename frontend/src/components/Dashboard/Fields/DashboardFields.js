@@ -1,7 +1,6 @@
 import DashboardTableFields from "./DashboardTableFields";
 
 import MainDashboard from "../../Structure/Dashboard/MainDashboard";
-import CreateIcon from "./../../Reusable/CreateIcon";
 
 import NavDashboard from "../../Structure/Dashboard/NavDashboard";
 import NavDashboardMobileButton from "../../Structure/Dashboard/NavDashboardMobileButton";
@@ -21,7 +20,6 @@ function DashboardFields() {
       {UserID && (
         <MainDashboard>
           <DashboardTableFields />
-          <CreateIcon />
         </MainDashboard>
       )}
     </section>

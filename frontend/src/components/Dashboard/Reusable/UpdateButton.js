@@ -1,4 +1,4 @@
-function UpdateIcon() {
+function UpdateButton() {
   const updateIconLink = "/assets/images/icone_images/rafraichir.svg";
   return (
     <img
@@ -10,4 +10,4 @@ function UpdateIcon() {
   );
 }
 
-export default UpdateIcon;
+export default UpdateButton;
