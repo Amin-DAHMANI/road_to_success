@@ -1,5 +1,5 @@
 #borderShowAccountModal
-  position: absolute
+  position: fixed
   width: 80%
   height: auto
   top: 50%
@@ -14,18 +14,15 @@
   color: white
   padding: 10px
   border-radius: 5px
+  width: 100%
+
+#contentPictureAccount
+  text-align: center
 
 #pictureAccount
   width: 40px
   height: 40px
   border-radius: 50%
-
-.rowShowAccount
-  display: flex
-  justify-content: space-between
-  align-items: center
-  margin: 0
-  margin-bottom: 10px
 
 p, h3
   margin: 0
@@ -38,6 +35,17 @@ p, h3
   background-color: $_color_red
   color: $_color_white
   padding: 5px
+  padding-right: 10px
+  padding-left: 10px
   border-radius: 5px
   cursor: pointer
   border: none
+  font-family: "Candara Bold"
+  transition: ease-in-out 1s
+
+#closeModal:hover
+  box-shadow: 0 0 10px white
+  transition: ease-in-out 1s
+
+#showAccountModal td
+  padding: 2px

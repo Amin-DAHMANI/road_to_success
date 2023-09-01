@@ -50,7 +50,6 @@ function DashboardTableAccounts() {
       });
     };
     getOneAccount();
-    console.log(oneAccount);
   };
 
   const handleUpdateAccount = (id) => {};
@@ -70,7 +69,7 @@ function DashboardTableAccounts() {
   };
 
   return (
-    <div>
+    <div id="containerModals">
       <div id="containerDashboardTables">
         {UserID ? (
           <table id="dashboardTableAccounts" className="dashboardTables">
